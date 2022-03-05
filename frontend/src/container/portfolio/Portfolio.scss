@@ -1,0 +1,22 @@
+.portfolio {
+    .wrapper {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        h1 {
+            margin-bottom: 1vh;
+            margin-top: 10vh;
+        }
+        .line {
+            width: 20vw;
+            height: 2px;
+            background: black;
+            margin-bottom: 10vh;
+        }
+        .projects {
+            display: flex;
+            flex-direction: column;
+        }
+    }
+}

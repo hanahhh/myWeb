@@ -1,0 +1,43 @@
+.project {
+    display: flex;
+    margin-bottom: 10vh;
+    .left {
+        margin-right: 5vw;
+        img {
+            width: 25vw;
+            height: 30vh;
+            object-fit: cover;
+            border-radius: 2px;
+            transition: all 0.3s ease-in-out;
+            &:hover {
+                transform: scale(1.1);
+            }
+        }
+    }
+    .center {
+        width: 1px;
+        height: 30vh;
+        background: black;
+        margin: 0 3.5vw 0 3.5vw;
+    }
+    .right {
+        display: flex;
+        flex-direction: column;
+        width: 30vw;
+        span {
+            font-weight: bold;
+            margin-bottom: 3vh;
+        }
+        p {
+            font-size: 12px;
+        }
+        a {
+            text-decoration: none;
+            color: black;
+            margin-right: 1vw;
+        }
+        .git {
+            margin-top: 2vh;
+        }
+    }
+}

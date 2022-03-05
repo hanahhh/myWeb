@@ -1,0 +1,52 @@
+.about {
+    height: 200vh;
+    position: relative;
+    .wrapper {
+        .left {
+            margin-left: -6.2vw;
+            svg {
+                width: 90vw;
+                height: 200vh;
+                
+            }
+        }
+        .center {
+            position: absolute;
+            bottom: 0;
+            left: 60vw;
+            width: 1px;
+            height: 50vh;
+            background: rgb(122, 122, 122);
+        }
+        .right {
+            position: absolute;
+            bottom: 15vh;
+            width: 30vw;
+            right: 5vw;
+            .line {
+                width: 10vw;
+                height: 2px;
+                background: black;
+                margin-top: 1vh;
+            }
+            p {
+                font-size: 14px;
+                margin-top: 5vh;
+            }
+            button {
+                margin-top: 2vh;
+                width: 12vw;
+                height: 7vh;
+                background: black;
+                color: white;
+                border: none;
+                border-radius: 5px;
+                cursor: pointer;
+                font-family: 'Montserrat';
+                &:hover {
+                    background: rgb(90, 87, 87);
+                }
+            }
+        }
+    }
+}
