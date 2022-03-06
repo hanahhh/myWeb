@@ -13,6 +13,9 @@
             height: 2px;
             background: black;
             margin-bottom: 10vh;
+            @media screen and (max-width: 900px) {
+                width: 50vw;
+            }
         }
         .projects {
             display: flex;

@@ -3,6 +3,9 @@
     height: 85vh;
     background: black;
     color: white;
+    @media screen and (max-width: 900px) {
+        height: 67vh;
+    }
     .wrapper {
         display: flex; 
         flex-direction: column;
@@ -17,6 +20,9 @@
             background: white;
             margin-top: 1vh;
             margin-bottom: 5vh;
+            @media screen and (max-width: 900px) {
+                width: 30vw;
+            }
         }
         .skill_card {
             display: flex;

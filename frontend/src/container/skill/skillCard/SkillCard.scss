@@ -5,11 +5,19 @@
     border-radius: 10px;
     color: black;
     margin: 0 2.5vw 0 2.5vw;
+    @media screen and (max-width: 900px) {
+        width: 40vw;
+        height: 30vh;
+    }
     .content {
         display: flex;
         flex-direction: column;
         padding-top: 27vh;
         padding-left: 1vw;
+        @media screen and (max-width: 900px) {
+            padding-top: 13vh;
+            padding-left: 5vw;
+        }
         .visible {
             display: flex;
             flex-direction: column;
@@ -36,6 +44,10 @@
             .clickView {
                 margin-top: -15vh;
                 font-size: 10px;
+                @media screen and (max-width: 900px) {
+                    margin-top: -5vh;
+                    margin-left: -2vw;
+                }
                 .strengthen {
                     display: flex;
                     margin-bottom: 1vh;

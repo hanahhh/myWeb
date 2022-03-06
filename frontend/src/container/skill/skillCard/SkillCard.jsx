@@ -15,11 +15,13 @@ const SkillCard = (props) => {
         setIsClicked(!isClicked)
     }
 
+    let size = window.screen.width<=900 ? -100 : -150
+
   return (
     <div className={`skillCard ${index%2==0 ? 'upBit' : 'downBit'}`}>
         <div className="content">
             <motion.div className='visible'
-                whileInView={isClicked ? {y: [0, -150], opacity: [0,1]} : {y: [-150, 0], opacity: 1}}
+                whileInView={isClicked ? {y: [0, size], opacity: [0,1]} : {y: [-150, 0], opacity: 1}}
                 transition = {{duration: 0.5, ease: 'easeInOut'}}
             >
                 <img src={urlFor(data.imgUrl)} alt={data.title} />

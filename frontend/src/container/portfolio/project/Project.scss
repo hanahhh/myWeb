@@ -3,6 +3,11 @@
     margin-bottom: 10vh;
     .left {
         margin-right: 5vw;
+        @media screen and (max-width: 900px) {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
         img {
             width: 25vw;
             height: 30vh;
@@ -13,12 +18,21 @@
                 transform: scale(1.1);
             }
         }
+        @media screen and (max-width: 900px) {
+            img {
+                width: 37vw;
+                height: 10vh;
+            }
+        }
     }
     .center {
         width: 1px;
         height: 30vh;
         background: black;
         margin: 0 3.5vw 0 3.5vw;
+        @media screen and (max-width: 900px) {
+            height: 27vh;
+        }
     }
     .right {
         display: flex;
@@ -27,9 +41,15 @@
         span {
             font-weight: bold;
             margin-bottom: 3vh;
+            @media screen and (max-width: 900px) {
+                font-size: 12px;
+            }
         }
         p {
             font-size: 12px;
+            @media screen and (max-width: 900px) {
+                font-size: 8px;
+            }
         }
         a {
             text-decoration: none;

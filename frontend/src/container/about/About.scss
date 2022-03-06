@@ -7,7 +7,14 @@
             svg {
                 width: 90vw;
                 height: 200vh;
-                
+            }
+            @media screen and (max-width: 900px) {
+                padding-left: 10vw;
+                margin-top: -69vh;
+                svg {
+                    width: 90vw;
+                    height: 200vh;
+                }
             }
         }
         .center {
@@ -17,6 +24,9 @@
             width: 1px;
             height: 50vh;
             background: rgb(122, 122, 122);
+            @media screen and (max-width: 900px) {
+                display: none;
+            }
         }
         .right {
             position: absolute;
@@ -45,6 +55,20 @@
                 font-family: 'Montserrat';
                 &:hover {
                     background: rgb(90, 87, 87);
+                }
+            }
+            @media screen and (max-width: 900px) {
+                width: 70vw;
+                right: 15vw;
+                .line {
+                    width: 46vw;
+                    height: 2px;
+                    background: black;
+                    margin-top: 1vh;
+                }
+                button {
+                    width: 40vw;
+                    height: 7vh;
                 }
             }
         }

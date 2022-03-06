@@ -6,6 +6,7 @@ import { FaFacebookSquare, FaLinkedin, FaGithubSquare } from 'react-icons/fa'
 import { client } from '../../client'
 
 const Land = () => {
+    console.log(window.screen.width)
 
     const [intro, setIntro] = useState([
         {
@@ -74,9 +75,9 @@ const Land = () => {
                 whileInView={{opacity: [0,1]}}
                 transition={{duration: 1}}
             >
-                <a href="https://www.facebook.com/nhunght2512" target='blank'><FaFacebookSquare color='white' size='2.3vw' className='icons'/></a>
-                <a href="https://www.linkedin.com/in/nhung-ho%C3%A0ng-th%E1%BB%8B-809838198/" target='blank'><FaLinkedin color='white' size='2.3vw' className='icons'/></a>
-                <a href="https://github.com/hanahhh" target='blank'><FaGithubSquare color='white' size='2.3vw' className='icons'/></a>
+                <a href="https://www.facebook.com/nhunght2512" target='blank'><FaFacebookSquare color='white' size={window.screen.width<=900 ? '7.5vw' : '2.3vw'} className='icons'/></a>
+                <a href="https://www.linkedin.com/in/nhung-ho%C3%A0ng-th%E1%BB%8B-809838198/" target='blank'><FaLinkedin color='white' size={window.screen.width<=900 ? '7.5vw' : '2.3vw'} className='icons'/></a>
+                <a href="https://github.com/hanahhh" target='blank'><FaGithubSquare color='white' size={window.screen.width<=900 ? '7.5vw' : '2.3vw'} className='icons'/></a>
             </motion.div>
         </div>
     </div>

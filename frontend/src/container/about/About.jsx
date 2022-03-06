@@ -22,7 +22,8 @@ const About = () => {
   
   window.addEventListener('scroll', () => {
     let scrollPercentage = (document.documentElement.scrollTop + document.body.scrollTop) / (document.documentElement.scrollHeight - document.documentElement.clientHeight)
-    setDrawLength(scrollPercentage*2.1)
+    let prc = window.screen.width<=900 ? 3.5 : 2.1
+    setDrawLength( scrollPercentage * prc)
   })
 
   let pathVariants = {
@@ -34,7 +35,7 @@ const About = () => {
       opacity: 1,
       pathLength: drawLength,
       transition: {
-        duration: 0.5,
+        duration: 0.4,
         ease: "linear"
       }
     }
