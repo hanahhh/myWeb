@@ -1,0 +1,16 @@
+.wrap {
+    margin: 10px;
+    .post {
+        display: flex;
+        flex-direction: column;
+        opacity: 0;
+        width: 100%;
+        background: black;
+        cursor: pointer;
+        span {
+            padding: 25px 10px 10px 10px;
+            font-size: 14px;
+            color: white;
+        }
+    }
+}

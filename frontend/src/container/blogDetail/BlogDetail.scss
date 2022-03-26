@@ -1,0 +1,103 @@
+.blogDetail {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background: rgb(0, 0, 0, 0.5);
+        @media screen and (max-width: 900px) {
+            background: white;
+        }
+    .post {
+        width: 60vw;
+        background: white;
+        padding: 30px 40px;
+        margin: 70px 40px 50px 40px;
+        @media screen and (max-width: 900px) {
+            width: 100vw;
+            margin: 30px 40px 50px 40px;
+        }
+        .title {
+            display: flex;
+            justify-content: center;
+            font-size: 20px;
+            font-weight: bold;
+            margin-bottom: 40px;
+        }
+        .block {
+            p {
+                font-size: 14px;
+                margin: 20px 0 20px 0;
+            }
+            img {
+                width: 100%;
+                height: 390px;
+                object-fit: cover;
+            }
+        }
+        .input {
+            display: flex;
+            flex-direction: column;
+            margin: 30px 0 30px 0;
+            span {
+                font-size: 20px;
+            }
+            .input_comment {
+                margin-top: 10px;
+                input {
+                    width: 350px;
+                    height: 35px;
+                    border: 1px solid black;
+                    outline: none;
+                    padding: 0 0 0 15px;
+                    border-radius: 10px;
+                    @media screen and (max-width: 900px) {
+                        width: 200px;
+                        height: 30px;
+                        border-radius: 5px;
+                    }
+                }
+                button {
+                    width: 80px;
+                    height: 35px;
+                    background: black;
+                    color: white;
+                    border: none;
+                    border-radius: 10px;
+                    margin-left: 10px;
+                    cursor: pointer;
+                    @media screen and (max-width: 900px) {
+                        width: 40px;
+                        height: 30px;
+                        border-radius: 5px;
+                        font-size: 10px;
+                        margin-left: 5px;
+                    }
+                }
+            }
+            
+        }
+        .comment {
+            .single {
+                display: flex;
+                align-items: center;
+                margin-bottom: 15px;
+                img {
+                    width: 30px;
+                    height: 30px;
+                    border-radius: 50%;
+                    margin-right: 20px;
+                }
+                .postedBy {
+                    .User {
+                        font-size: 14px;
+                        font-weight: 500;
+                    }
+                    p {
+                        font-size: 12px;
+                    }
+                }
+            }
+
+        }
+    }
+    
+}

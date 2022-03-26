@@ -1,0 +1,54 @@
+.login {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        .logo {
+            font-weight: bold;
+            @media screen and (min-width: 2000px) {
+                font-size: 20px;
+            }
+            .fairy {
+                font-family: 'Playfair Display SC';
+                letter-spacing: -0.135em;
+            }
+        }
+        .button {
+            margin-top: 4vh;
+            button {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 18vw;
+                height: 8vh;
+                background: black;
+                color: white;
+                border: none;
+                border-radius: 5px;
+                cursor: pointer;
+                font-family: 'Montserrat';
+                font-weight: bold;
+                @media screen and (max-width: 900px) {
+                    width: 60vw;
+                    height: 7vh;
+                    font-size: 18px;
+                    font-weight: normal;
+                    .icons {
+                        margin-right: 10vw;
+                    }
+                }
+                &:hover {
+                    background: rgb(75, 72, 72);
+                }
+                .icons {
+                    margin-right: 1vw;
+                }
+            }
+        }
+    }
+}

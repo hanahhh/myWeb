@@ -8,6 +8,11 @@ import intro from './intro'
 import abouts from './abouts'
 import skills from './skills'
 import portfolio from './portfolio'
+import user from './user'
+import postedBy from './postedBy'
+import comment from './comment'
+import blog from './blog'
+import blockContent from './blockContent'
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
   // We name our schema
@@ -18,6 +23,11 @@ export default createSchema({
     intro,
     abouts,
     skills,
-    portfolio
+    portfolio,
+    user,
+    postedBy,
+    comment,
+    blog, 
+    blockContent
   ]),
 })

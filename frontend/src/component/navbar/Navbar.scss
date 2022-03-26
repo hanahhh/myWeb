@@ -9,6 +9,7 @@
         align-items: center;
         justify-content: space-between;
         .logo {
+            cursor: pointer;
             font-weight: bold;
             @media screen and (min-width: 2000px) {
                 font-size: 20px;
@@ -20,10 +21,13 @@
         }
         .page {
             margin-right: 5vw;
-            span {
+            .link {
                 margin-left: 2vw;
                 font-size: 14px;
                 cursor: pointer;
+            }
+            .icons {
+              margin-left: 2vw;
             }
             @media screen and (max-width: 900px) {
                 display: none;
@@ -121,5 +125,36 @@
             display: none;
           }  
         }
+    }
+    .icons-login {
+      position: absolute;
+      right: 1.2vw;
+      top: 1.8vh;
+      cursor: pointer;
+      @media screen and (max-width: 900px) {
+        display: none;
+      }
+      .user {
+        width: 2.6vw;
+        cursor: pointer;
+        border-radius: 50%;
+        object-fit: cover;
+      } 
+      .logout {
+        position: absolute;
+        border: 1px solid white;
+        background: black;
+        color: white;
+        width: 7vw;
+        height: 5vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        right: -1vw;
+        top: 6.4vh;
+        z-index: 10;
+        border-radius: 5px;
+        opacity: 0;
+      }
     }
 }
