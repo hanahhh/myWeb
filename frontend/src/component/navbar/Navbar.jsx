@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import './Navbar.scss'
 import { motion } from 'framer-motion'
 import { HiMenuAlt4, HiX } from 'react-icons/hi';
@@ -6,7 +6,13 @@ import { RiLoginCircleFill } from 'react-icons/ri';
 import { useNavigate, useParams } from 'react-router-dom'
 import { Link } from 'react-scroll'
 
-const Navbar = ({user}) => {
+import { userQuery } from '../../utils/data'
+import { client } from '../../client'
+
+const Navbar = () => {
+  const userInfo = localStorage.getItem('user') !== 'undefined' ? JSON.parse(localStorage.getItem('user')) : localStorage.clear();
+  const [user, setUser] = useState();
+  
   const [toggle, setToggle] = useState(false);
   const [isClicked, setIsClicked] = useState(false)
   const about = () => window.scrollTo({top: 1200, behavior: 'smooth'})
@@ -20,6 +26,14 @@ const Navbar = ({user}) => {
     localStorage.removeItem("user");
     window.location.reload();
   }
+
+  useEffect(() => {
+    const query = userQuery(userInfo?.googleId);
+
+    client.fetch(query).then((data) => {
+      setUser(data[0]);
+    });
+  }, []);
 
   return (  
     <motion.div className='navbar'
@@ -76,7 +90,7 @@ const Navbar = ({user}) => {
         </div>
         {!user ? <RiLoginCircleFill size='2.5vw' className="icons-login" onClick={() => navigate("/login")}/> :
           <div className="icons-login">
-            <img className='user' src={(user?.image)} alt={user?.userName} onClick={() => setIsClicked(!isClicked)}/>
+            <img className='user' src={(user.image)} alt={user?.userName} onClick={() => setIsClicked(!isClicked)}/>
             {isClicked===true &&
               <motion.div 
                 className="logout"

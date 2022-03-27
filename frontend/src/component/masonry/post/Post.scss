@@ -5,12 +5,14 @@
         flex-direction: column;
         opacity: 0;
         width: 100%;
-        background: black;
         cursor: pointer;
+        img {
+            border-radius: 10px;
+        }
         span {
-            padding: 25px 10px 10px 10px;
-            font-size: 14px;
-            color: white;
+            padding: 10px 10px 35px 10px;
+            font-size: 12px;
+            font-weight: 600;
         }
     }
 }

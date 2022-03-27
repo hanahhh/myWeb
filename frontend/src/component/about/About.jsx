@@ -62,7 +62,7 @@ const About = () => {
           <h1>ABOUT ME</h1>
           <div className="line"></div>
           <p>{about[0].aboutMe}</p>
-          <a download href="../../asset/cv1.pdf"><button>Download my CV</button></a>
+          <a download href="https://drive.google.com/file/d/1fSPvjW51ssQXSSqVw4VS8Gg8wWs6Hcv0/view?usp=sharing"><button>Download my CV</button></a>
           
         </motion.div>
       </div>

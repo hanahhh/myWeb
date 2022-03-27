@@ -22,15 +22,14 @@ const BlogDetail = ({ user }) => {
   const fetchBlogDetail = () => {
     const query = blogDetailQuery(id)
 
-    client.fetch(`${query}`).then((data) => {
+    client.fetch(query).then((data) => {
       setPost(data[0])
-      setAddingComment(false)
     });
   };
 
   useEffect(() => {
     fetchBlogDetail()
-  }, [blogID, setAddingComment])
+  }, [blogID])
 
   const addComment = () => {
     if (comment) {
@@ -38,11 +37,12 @@ const BlogDetail = ({ user }) => {
       client
         .patch(id)
         .setIfMissing({ comments: [] })
-        .insert('after', 'comments[-1]', [{ comment, _key: uuidv4(), postedBy: { _type: 'postedBy', _ref: user._id } }])
+        .insert('after', 'comments[-1]', [{ comment, _key: uuidv4(), postedBy: { _type: 'postedBy', _ref: user?._id } }])
         .commit()
         .then(() => {
           fetchBlogDetail();
           setComment('');
+          setAddingComment(false)
         });
     }
   };

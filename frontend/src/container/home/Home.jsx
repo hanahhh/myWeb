@@ -5,7 +5,7 @@ const Home = ({ user }) => {
 
   return (
     <div>
-        <Land user={user && user}/>
+        <Land/>
         <About/>
         <Skill/>
         <Portfolio/>

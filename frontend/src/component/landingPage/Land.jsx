@@ -39,7 +39,7 @@ const Land = ({user}) => {
         }
   return (
     <div className='land' id='land'>
-        <Navbar user={user && user}/>
+        <Navbar/>
         <div className="line">
             <div className="horizontal"></div>
             <div className="vertical">

@@ -44,7 +44,7 @@ function App() {
         </div>
       </div>
       <Routes>
-        <Route path="/" exact element={<Home user={user}/>} />
+        <Route path="/" exact element={<Home/>} />
         <Route path="/login" exact element={<Login />} />
         <Route path="/blog" exact element={<Blog user={user}/>} />
         <Route path="/blog/:id" exact element={<BlogDetail user={user}/>} />
