@@ -17,7 +17,6 @@ const About = () => {
 
       client.fetch(query).then((data) => {
         setAbout(data)
-        console.log(data)
       });
     }, []);
   

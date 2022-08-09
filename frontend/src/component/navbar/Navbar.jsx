@@ -3,7 +3,7 @@ import './Navbar.scss'
 import { motion } from 'framer-motion'
 import { HiMenuAlt4, HiX } from 'react-icons/hi';
 import { RiLoginCircleFill } from 'react-icons/ri';
-import { useNavigate, useParams } from 'react-router-dom'
+import { useNavigate, useLocation } from 'react-router-dom'
 import { Link } from 'react-scroll'
 
 import { userQuery } from '../../utils/data'
@@ -15,12 +15,9 @@ const Navbar = () => {
   
   const [toggle, setToggle] = useState(false);
   const [isClicked, setIsClicked] = useState(false)
-  const about = () => window.scrollTo({top: 1200, behavior: 'smooth'})
-  const skills = () => window.scrollTo({top: 1810, behavior: 'smooth'})
-  const portfolio = () => window.scrollTo({top: 2320, behavior: 'smooth'})
-  const contact = () => window.scrollTo({top: 3000, behavior: 'smooth'})
   const navigate = useNavigate()
-  const param = useParams()
+  let location = useLocation()
+  location = location.pathname.split('/')[1]
 
   const handleLogout = () => {
     localStorage.removeItem("user");
@@ -45,10 +42,10 @@ const Navbar = () => {
                 <h1>Hanah<span className='fairy'>DEPEACE</span></h1>
             </div>
             <div className="page">
-                <Link className='link' to="about" spy={true} smooth={true} offset={600} duration={500}>ABOUT</Link>
-                <Link className='link' to="skill" spy={true} smooth={true} offset={0} duration={500}>SKILL</Link>
-                <Link className='link' to="portfolio" spy={true} smooth={true} offset={50} duration={500}>PORTFOLIO</Link>
-                <Link className='link' to="contact" spy={true} smooth={true} offset={50} duration={500}>CONTACT</Link>
+                <Link className='link' to="about" spy={true} smooth={true} offset={600} duration={500} onClick={() => location!='' && navigate('/')}>ABOUT</Link>
+                <Link className='link' to="skill" spy={true} smooth={true} offset={0} duration={500} onClick={() => location!='' && navigate('/')}>SKILL</Link>
+                <Link className='link' to="portfolio" spy={true} smooth={true} offset={50} duration={500} onClick={() => location!='' && navigate('/')}>PORTFOLIO</Link>
+                <Link className='link' to="contact" spy={true} smooth={true} offset={50} duration={500} onClick={() => location!='' && navigate('/')}>CONTACT</Link>
                 <Link className='link' onClick={() => navigate("/blog")}>BLOG</Link>
             </div>
             <div className="app__navbar-menu">
@@ -73,6 +70,7 @@ const Navbar = () => {
                             setToggle(false); 
                             if(item === 'blog') {navigate("/blog")}
                             if(item === 'login') {navigate("/login")}
+                            location!='' && navigate('/')
                             }
                           }
                         >

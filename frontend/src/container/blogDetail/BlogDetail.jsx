@@ -2,16 +2,17 @@ import React, { useEffect, useState } from 'react'
 import { Navbar } from '../../component'
 import { client } from '../../client'
 import { blogDetailQuery } from '../../utils/data'
-import { useParams } from 'react-router-dom'
+import { useParams, useNavigate } from 'react-router-dom'
 import { motion } from 'framer-motion'
 import BlockContent from "@sanity/block-content-to-react"
-import { v4 as uuidv4 } from 'uuid';
+import { v4 as uuidv4 } from 'uuid'
+import { userQuery } from '../../utils/data'
 
 import './BlogDetail.scss'
 
-const BlogDetail = ({ user }) => {
-
+const BlogDetail = ({ user, setUser }) => {
   const blogID = useParams()
+  const navigate = useNavigate()
   let id = blogID.id
   id = id.slice(1, id.length)
 
@@ -29,15 +30,30 @@ const BlogDetail = ({ user }) => {
 
   useEffect(() => {
     fetchBlogDetail()
+    if(!user) {
+      const userInfo = JSON.parse(localStorage.getItem('user'))
+      
+      if(userInfo != undefined){
+        const query = userQuery(userInfo.googleId);
+
+        client.fetch(query).then((data) => {
+          setUser(data[0]);
+        });
+      }
+    }
   }, [blogID])
 
   const addComment = () => {
+    if(!user) {
+      navigate('/login')
+    }
     if (comment) {
       setAddingComment(true)
       client
         .patch(id)
         .setIfMissing({ comments: [] })
-        .insert('after', 'comments[-1]', [{ comment, _key: uuidv4(), postedBy: { _type: 'postedBy', _ref: user?._id } }])
+        .insert('after', 'comments[-1]', 
+          [{ comment, _key: uuidv4(), postedBy: { _type: 'postedBy', _ref: user?._id } }])
         .commit()
         .then(() => {
           fetchBlogDetail();

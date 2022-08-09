@@ -2,7 +2,7 @@ import './App.scss'
 
 import React, { useState ,useEffect } from 'react'
 
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, useLocation } from 'react-router-dom';
 import Home from './container/home/Home.jsx'
 import Login from './container/login/Login.jsx'
 import Blog from './container/blog/Blog.jsx'
@@ -19,7 +19,10 @@ function App() {
   const userInfo = localStorage.getItem('user') !== 'undefined' ? JSON.parse(localStorage.getItem('user')) : localStorage.clear();
   const [user, setUser] = useState();
   const [scroll, setScroll] = useState('')
+  let location = useLocation()
+  location = location.pathname.split('/')[1]
 
+  
   useEffect(() => {
     const query = userQuery(userInfo?.googleId);
 
@@ -27,7 +30,6 @@ function App() {
       setUser(data[0]);
     });
   }, []);
-
   
   window.addEventListener('scroll', (event) => {
     window.scrollY > 100 ? setScroll('visible') : setScroll('')
@@ -46,10 +48,10 @@ function App() {
       <Routes>
         <Route path="/" exact element={<Home/>} />
         <Route path="/login" exact element={<Login />} />
-        <Route path="/blog" exact element={<Blog user={user}/>} />
-        <Route path="/blog/:id" exact element={<BlogDetail user={user}/>} />
+        <Route path="/blog" exact element={<Blog user={user} />} />
+        <Route path="/blog/:id" exact element={<BlogDetail user={user} setUser={setUser}/>} />
       </Routes>
-      <Footer />
+      {location!='login' && <Footer />}
     </div>
   );
 }
