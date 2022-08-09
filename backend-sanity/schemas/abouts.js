@@ -7,6 +7,11 @@ export default{
             name:'aboutMe',
             title:'AboutMe',
             type:'string'
+        }, 
+        {
+            name:'myCV',
+            title:'MyCV',
+            type:'string'
         }
     ]
 }
